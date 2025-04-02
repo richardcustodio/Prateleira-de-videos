@@ -1,0 +1,118 @@
+/* src/index.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"); /* Importe a fonte Roboto */
+
+:root {
+  /* Tema Claro (Padrão) */
+  --primary-background: #f8f9fa; /* Azul bem claro e suave */
+  --secondary-background: #212529;
+  --primary-text: #6c757d; /* Azul escuro acinzentado */
+  --secondary-text: #6c757d; /* Cinza azulado */
+  --accent-color: #007bff; /* Azul mais vibrante para acentos */
+  --border-color: #ced4da;
+}
+
+.theme-dark {
+  /* Tema Escuro */
+  --primary-background: #343a40; /* Azul escuro acinzentado */
+  --secondary-background: #212529; /* Azul mais escuro */
+  --primary-text: #f8f9fa; /* Branco acinzentado */
+  --secondary-text: #adb5bd; /* Cinza claro */
+  --accent-color: #007bff; /* Azul mais claro e vibrante para acentos */
+  --border-color: #495057;
+}
+
+body {
+  font-family: "Roboto", sans-serif; /* Use a fonte importada */
+  background-color: var(--primary-background);
+  color: var(--primary-text);
+  margin: 0; /* Reset de margens padrão */
+  padding: 0; /* Reset de paddings padrão */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased; /* Melhor renderização de fontes em navegadores WebKit */
+  -moz-osx-font-smoothing: grayscale; /* Melhor renderização de fontes no Firefox */
+  line-height: 1.5; /* Altura da linha padrão para o corpo */
+}
+
+/* Reset de estilos para garantir consistência entre navegadores */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+form,
+input,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box; /* Importante para o modelo de caixa */
+}
+
+ul {
+  list-style: none;
+}
+
+/* Estilos gerais para links (você pode personalizar) */
+a {
+  text-decoration: none;
+  color: var(--accent-color); /* Use a cor de acento para links */
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos gerais para botões (serão sobrescritos pelos estilos do Styled Components) */
+button {
+  cursor: pointer;
+  font-family: "Roboto", sans-serif; /* Garante a mesma fonte para os botões */
+}
+
+/* Pequena melhoria para a renderização de texto */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.video-item-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.video-item-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.video-item-enter-done {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.video-item-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.video-item-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.video-item-exit-done {
+  opacity: 0;
+  transform: translateY(-20px);
+}
